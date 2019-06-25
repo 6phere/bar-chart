@@ -10,18 +10,15 @@
   "pika": true,
   "sideEffects": false,
   "keywords": [
-    "bar",
-    "chart",
+    "bar chart",
     "chart",
     "chart.js",
     "sixphere",
     "diwrapper",
     "dependency",
     "injection",
-    "web",
-    "component",
-    "custom",
-    "element"
+    "web component",
+    "custom element"
   ],
   "dependencies": {
     "@sixphere/chartjs": "^1.0.0",

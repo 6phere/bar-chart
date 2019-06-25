@@ -24145,6 +24145,8 @@ customElements.define(ChartLine.is, ChartLine);
 class PolarisBarChart extends SixphereLitElement$1 {
   constructor() {
     super();
+    this.width = 0;
+    this.height = 0;
     this.data = {};
     this.options = {};
     this.updateComplete.then(this.onUpdateComplete.bind(this));
@@ -24160,6 +24162,17 @@ class PolarisBarChart extends SixphereLitElement$1 {
 
   __inject(service) {
     this.service = service;
+  }
+
+  static get properties() {
+    return {
+      width: {
+        type: Number
+      },
+      height: {
+        type: Number
+      }
+    };
   }
 
   static get is() {
@@ -24203,7 +24216,7 @@ class PolarisBarChart extends SixphereLitElement$1 {
   }
 
   render() {
-    return html$1(_templateObject$1(), this.data, this.options, 300, 300);
+    return html$1(_templateObject$1(), this.data, this.options, this.width, this.height);
   }
 
 }

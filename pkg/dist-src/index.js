@@ -6,6 +6,8 @@ customElements.define(ChartLine.is, ChartLine);
 class PolarisBarChart extends SixphereLitElement {
   constructor() {
     super();
+    this.width = 0;
+    this.height = 0;
     this.data = {};
     this.options = {};
     this.updateComplete.then(this.onUpdateComplete.bind(this));
@@ -21,6 +23,17 @@ class PolarisBarChart extends SixphereLitElement {
 
   __inject(service) {
     this.service = service;
+  }
+
+  static get properties() {
+    return {
+      width: {
+        type: Number
+      },
+      height: {
+        type: Number
+      }
+    };
   }
 
   static get is() {
@@ -53,7 +66,7 @@ class PolarisBarChart extends SixphereLitElement {
 
   render() {
     return html`
-            <chartjs-bar .data="${this.data}" .options="${this.options}" .width="${300}" .height="${300}"></chartjs-bar>
+            <chartjs-bar .data="${this.data}" .options="${this.options}" .width="${this.width}" .height="${this.height}"></chartjs-bar>
         `;
   }
 

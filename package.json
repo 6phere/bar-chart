@@ -1,6 +1,6 @@
 {
   "name": "@sixphere-polaris/bar-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Injectable chart based on @sixphere/chartjs bar chart",
   "main": "pkg/dist-web/index.bundled.js",
   "module": "pkg/dist-web/index.bundled.js",

@@ -1,9 +1,7 @@
-import { ChartBar, ChartLine } from '@sixphere/chartjs'
+import { ChartBar } from '@sixphere/chartjs'
 import { SixphereLitElement, html } from '@sixphere/lit-element'
 
 customElements.define(ChartBar.is, ChartBar)
-customElements.define(ChartLine.is, ChartLine)
-
 
 class PolarisBarChart extends SixphereLitElement {
 
@@ -12,7 +10,7 @@ class PolarisBarChart extends SixphereLitElement {
 
         this.width = 0
         this.height = 0
-        
+
         this.data = {}
         this.options = {}
 
@@ -21,9 +19,9 @@ class PolarisBarChart extends SixphereLitElement {
 
     /**
      * Services injection method using by Sixphere Dependency Injection Wrapper library.
-     * 
+     *
      * @see https://www.npmjs.com/package/@sixphere/diwrapper
-     * 
+     *
      * @param {Service} service Data service. Must implement a getData async method.
      */
     __inject(service) {
@@ -36,7 +34,7 @@ class PolarisBarChart extends SixphereLitElement {
             height: { type: Number },
         }
     }
-    
+
     static get is () {
         return 'polaris-bar-chart';
     }
@@ -44,10 +42,10 @@ class PolarisBarChart extends SixphereLitElement {
     async onUpdateComplete() {
         await this.getData()
         await this.getOptions()
-        
+
         await this.requestUpdate()
     }
-    
+
     async getData() {
         try {
             let response = await this.service.getData()
